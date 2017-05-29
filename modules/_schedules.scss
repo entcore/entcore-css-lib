@@ -4,7 +4,7 @@
 		width: 100%;
 		position: absolute;
 		left: 0;
-		top: 40px;
+		top: 60px;
 		z-index: 800;
 	}
 	.next-timeslots{
@@ -13,7 +13,7 @@
 		left: 0;
 		bottom: 0;
 		z-index: 800;
-		height: 27px;
+		height: 17px;
 	}
 	.hidden-schedule-items {
 		&.after{
@@ -45,7 +45,7 @@
 		color: #777;
 		position: absolute;
 		left: -115px;
-		margin-top: 60px;
+		margin-top: 80px;
 	}
 	.timeslot{
 		height: 40px;
@@ -55,24 +55,27 @@
 	}
 	.days{
 		width: 100%;
-		padding-top: 60px;
+		padding-top: 80px;
 		overflow: hidden;
 		position: relative;
 		height: 546px;
 		.day{
 			float: left;
 			width: 100% / 7;
+			&.single {
+				width: 100%;
+			}
 			position: relative;
 			legend{
 				width: 100%;
 				text-align: center;
-				height: 40px;
-				line-height: 40px;
+				height: 60px;
+				line-height: 30px;
 				color: #777;
 				background: #D9F1F1;
 				box-sizing: border-box;
 				position: absolute;
-				top: -60px;
+				top: -80px;
 				z-index: 800;
 			}
 			.timeslots{
@@ -164,6 +167,99 @@
 	}
 }
 
+.schedule-month {
+	margin: 0 !important;
+	width: 100% !important;
+	padding-top: 60px;
+
+	.month-day {
+		width: calc(100% / 7);
+		height: 80px;
+		float: left;
+		overflow: auto;
+		border: 1px solid gray;
+		border-right-width: 0;
+		box-sizing: border-box;
+		margin-bottom: -1px;
+
+		&:last-child,
+		&.offset-6 {
+			border-right-width: 1px;
+		}
+		&.offset-0 {
+			clear: left;
+		}
+
+		&:first-of-type.offset-1 {
+			margin-left: calc(1 * 100% / 7);
+		}
+
+		&:first-of-type.offset-2 {
+			margin-left: calc(2 * 100% / 7);
+		}
+
+		&:first-of-type.offset-3 {
+			margin-left: calc(3 * 100% / 7);
+		}
+
+		&:first-of-type.offset-4 {
+			margin-left: calc(4 * 100% / 7);
+		}
+
+		&:first-of-type.offset-5 {
+			margin-left: calc(5 * 100% / 7);
+		}
+
+		&:first-of-type.offset-6 {
+			margin-left: calc(6 * 100% / 7);
+		}
+
+		.day-number {
+			display: block;
+			padding-left: 3px;
+			font-size: 0.9em;
+		}
+
+		.n-more {
+			position: absolute;
+			top: 1px;
+			right: 1px;
+		}
+
+		.schedule-items .item {
+			font-size: 0.8em;
+			line-height: 1.4em;
+			margin: 0 1px 1px;
+
+			* {
+				white-space: nowrap;
+				overflow-x: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+
+	.legend > .month-day {
+		height: 1.6em;
+		line-height: 1.6em;
+		text-align: center;
+		overflow: visible;
+	}
+
+	/* Clearfix */
+	.legend::after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+
+	.grid::after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+
 .week-switcher{
 	z-index: 30;
 	font-size: 12px;
@@ -176,13 +272,39 @@
 
 .calendar-current-week{
 	position: absolute;
-	top: -63px;
-	height: 45px;
+	top: -72px;
+	height: 46px;
 	background: #efefef;
 	width: 100%;
 	text-align: right;
 	font-weight: bold;
-	line-height: 45px;
+	line-height: 46px;
 	padding-right: 8px;
 	box-sizing: border-box;
+}
+
+.changeDisplayModeButtons {
+	position: absolute;
+	top: -68px;
+	left: 215px;
+	z-index: 9999;
+}
+
+lightbox.schedules-more-items section.lightbox > div.content {
+	max-width: 300px;
+	max-height: 300px;
+	margin-top: 50%;
+	transform: translateY(-100%);
+	overflow-y: auto;
+
+	.item {
+		margin: 0 1px 1px;
+
+		* {
+			white-space: nowrap;
+			overflow-x: hidden;
+			text-overflow: ellipsis;
+			padding: 3px;
+		}
+	}
 }
