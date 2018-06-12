@@ -1,6 +1,9 @@
 .media-library {
-	slider{
+	slider.drawing-zone {
 		width: 85%;
+		* {
+			overflow: auto;
+		}
 	}
 	.tipbox{
 		float: right;
@@ -19,7 +22,7 @@
 			box-sizing: border-box;
 			border: 1px solid #ddd;
 			margin-bottom: 25px;
-			height: 540px;
+			height:455px;
 			.compression-view{
 				padding: 15px;
 				width: 470px;
