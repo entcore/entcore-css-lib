@@ -193,7 +193,7 @@
   width: $icon-size;
   min-height: $icon-size;
   min-width: $icon-size;
-  background-image: url("#{$icons-root}#{$icon-name}#{$icons-extension}");
+  background-image: url($cdnDomainRelative + "#{$icons-root}#{$icon-name}#{$icons-extension}");
   background-repeat: no-repeat;
   background-position: center;
   display: inline-block;
@@ -208,7 +208,7 @@
 	width: $icon-size;
 	min-height: $icon-size;
 	min-width: $icon-size;
-	background-image: url("#{$icons-root}#{$icon-name}#{$icons-extension}");
+	background-image: url($cdnDomainRelative + "#{$icons-root}#{$icon-name}#{$icons-extension}");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
